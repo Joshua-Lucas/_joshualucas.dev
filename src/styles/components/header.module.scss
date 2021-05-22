@@ -1,2 +1,47 @@
-.title {
+@import '../utilities/variables';
+@import '../utilities/mixins';
+.component {
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column-reverse;
+  @include desktop() {
+    flex-direction: row;
+  }
+}
+
+.heading {
+  @include desktop() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 27%;
+    height: 100vh;
+    background-color: rgba($secondary-color, $alpha: 0.6);
+    color: $primary-color;
+    z-index: 10;
+
+    h1,
+    span,
+    p {
+      padding-right: 1rem;
+      text-align: right;
+    }
+    h1 {
+      font-size: 4.5rem;
+      padding-bottom: 0.25rem;
+      word-wrap: normal;
+    }
+
+    span {
+      display: block;
+      font-weight: 300;
+      font-size: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      margin-left: 15%;
+      font-size: 1.25rem;
+    }
+  }
 }
